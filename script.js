@@ -59,14 +59,15 @@ function showTimelapse(){
     }
     
 // set it running every one second
+
         setInterval(function() { 
           $('#liveStream > img:first')
-            .fadeOut(200)
+            .fadeOut(500)
             .next()
-            .fadeIn(200)
-            .end();
-        },  200);
-    
+            .fadeIn(500)
+            .end()
+            .appendTo('#liveStream');
+        },  500);
 }
 
     

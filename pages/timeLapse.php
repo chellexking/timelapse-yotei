@@ -1,6 +1,5 @@
 <div id="liveStream" style="display:none">   
     
-    
     <?php
     $files = glob("../images/*.*");
     foreach($files as $num)
@@ -13,9 +12,7 @@
 <?php include 'progressBar.php' ?>
     
 </div>
-    
 
 <script>
-    $("#liveStream > img:gt(0)").hide();
+        $("#liveStream > img:gt(0)").hide();
 </script>
-    
