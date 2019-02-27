@@ -19,9 +19,11 @@ function saveImage() {
     
 
 //fullscreen toggle functions 
-function fullscreen(element){
+function fullscreen(){
+    
     if(!document.fullscreenElement){
         document.documentElement.requestFullscreen();
+       
         
     } else {
         document.exitFullscreen();
@@ -53,21 +55,21 @@ function showTimelapse(){
     var x = document.getElementById("liveStream");
     if(x.style.display === "none"){
         x.style.display = "block";
-    }
-    else{
-        x.style.display="none";
-    }
-    
-// set it running every one second
-
-        setInterval(function() { 
+        
+        var slideInterval = setInterval(function() { 
           $('#liveStream > img:first')
             .fadeOut(500)
             .next()
             .fadeIn(500)
             .end()
             .appendTo('#liveStream');
-        },  500);
+        },  250);
+    
+    }
+    else{
+        x.style.display="none";
+        clearInterval(slideInterval);
+    }
 }
 
     

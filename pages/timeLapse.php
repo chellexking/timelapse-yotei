@@ -7,6 +7,7 @@
         $image = '<img src="'.$num.'" style="max-height:100%; max-width:100%">';
       echo $image;
     }
+//    exit; 
     ?>
 
 <?php include 'progressBar.php' ?>

@@ -29,7 +29,7 @@
     
     <!-- display image -->
     <div id="myModal" class="modal"> 
-        <img id="img01" style="max-width:100%;" onclick="fullscreen(this);"></div>    
+        <img id="img01" style="max-width:100%;" onclick="fullscreen();"></div>    
         
     <!-- bottom column for image selection --> 
     <?php include 'imageColumn.php'; ?>
