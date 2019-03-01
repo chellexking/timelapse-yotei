@@ -50,27 +50,6 @@ function showPage(){
     document.getElementById("pageDisplay").style.display="block";
 }
 
-//timelapse function upon button click
-function showTimelapse(){
-    var x = document.getElementById("liveStream");
-    if(x.style.display === "none"){
-        x.style.display = "block";
-        
-        var slideInterval = setInterval(function() { 
-          $('#liveStream > img:first')
-            .fadeOut(500)
-            .next()
-            .fadeIn(500)
-            .end()
-            .appendTo('#liveStream');
-        },  250);
-    
-    }
-    else{
-        x.style.display="none";
-        clearInterval(slideInterval);
-    }
-}
 
     
     

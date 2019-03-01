@@ -22,9 +22,9 @@
     <div id="pageDisplay" style="display:none;">
     
     <!-- side bar play button and save button -->
-    <div class ="sideButton" onclick="showTimelapse();move();" style ="bottom: 18em;">
+    <div class ="sideButton" onclick="showTimelapse();" style ="bottom: 18em;">
         <i class="fas fa-play-circle"></i></div>
-    <div class ="sideButton" onclick="saveImage()" style="bottom: 16.3em;">
+    <div class ="sideButton" onclick="saveImage();" style="bottom: 16.3em;">
         <i class="fas fa-cloud-download-alt"></i></div>
     
     <!-- display image -->
