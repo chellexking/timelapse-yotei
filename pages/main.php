@@ -21,12 +21,17 @@
     <div id="loader"></div>
     <div id="pageDisplay" style="display:none;">
     
-    <!-- side bar play button and save button -->
-    <div class ="sideButton" onclick="showTimelapse();" style ="bottom: 18em;">
-        <i class="fas fa-play-circle"></i></div>
-    <div class ="sideButton" onclick="saveImage();" style="bottom: 16.3em;">
-        <i class="fas fa-cloud-download-alt"></i></div>
-    
+        <!-- side bar fav button,
+             side bar play button,
+             side bar save button -->
+        <?php include 'favButton.php'; ?>
+
+        <div class = "sideButton" onclick="showTimelapse();" style ="top: 11.8em;">
+            <i class="fas fa-play-circle"></i></div>
+
+        <div class ="sideButton" onclick="saveImage();" style="top: 13.6em;">
+            <i class="fas fa-cloud-download-alt"></i></div>
+
     <!-- display image -->
     <div id="myModal" class="modal"> 
         <img id="img01" style="max-width:100%;" onclick="fullscreen();"></div>    

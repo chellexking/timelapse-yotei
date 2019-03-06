@@ -16,15 +16,11 @@ function saveImage() {
     //call the globally scoped object
     window.open(imageURL.link);
 }
-    
 
 //fullscreen toggle functions 
 function fullscreen(){
-    
     if(!document.fullscreenElement){
         document.documentElement.requestFullscreen();
-       
-        
     } else {
         document.exitFullscreen();
     }

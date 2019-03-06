@@ -96,10 +96,9 @@
 function showTimelapse(){
     var x = document.getElementById("liveStream");
     
-    
     if(x.style.display === "none"){
         x.style.display = "block";
-        
+    
         var width = 1;
         
         playButton.onclick = 
@@ -130,12 +129,12 @@ function showTimelapse(){
             document.getElementById("pauseButton").style.display = "none";
             clearInterval(slideInterval);
             clearInterval(progressBar);
-            width = (elem.style.width).slice(0, -1);
         } 
     }
     else{
         x.style.display="none";
         clearInterval(slideInterval);
+        clearInterval(progressBar);
     } 
 }
     
