@@ -1,6 +1,5 @@
         <div class = "sideButton1" style = "top: 10em;">
             <i class="far fa-heart"></i>
-
             <div class = "sidePanel">
                 <div class = "sidePanelContent">
                     Favourite Images    
@@ -17,6 +16,22 @@
             </div>
         </div>
 
+        <div class = "sideButton1" onclick="showTimelapse();" style ="top:11.8em;">
+            <i class="fas fa-play-circle"></i>
+                <div class = "sidePanel">
+                <div class = "sidePanelContent">
+                    Timelapse Videos    
+                    <hr style="margin-right: 1em;">
+                    <div id="imageBorder" style="width:50%; font-size: 15px; ">
+                        <center>
+                        <img src="../images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;"> <br>
+                        24 Hours
+                        </center>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
 <style>
 /* side panel display */
 
@@ -25,7 +40,6 @@
     height: 20em;
     width: 16em;
     background: #323232;
-    z-index: 1;
     border-radius: 20px 0 20px 20px;
     margin-left: -14.5em;
     margin-top: -7em;

@@ -24,13 +24,10 @@
         <!-- side bar fav button,
              side bar play button,
              side bar save button -->
-        <?php include 'favButton.php'; ?>
+        <?php include 'sidePanel.php'; ?>
 
-        <div class = "sideButton" onclick="showTimelapse();" style ="top: 11.8em;">
-            <i class="fas fa-play-circle"></i></div>
-
-        <div class ="sideButton" onclick="saveImage();" style="top: 13.6em;">
-            <i class="fas fa-cloud-download-alt"></i></div>
+        <div class="sideButton" onclick="saveImage();">
+            <i class="fas fa-cloud-download-alt"> </i> Save </div>
 
     <!-- display image -->
     <div id="myModal" class="modal"> 
