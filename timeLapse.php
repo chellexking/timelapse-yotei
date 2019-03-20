@@ -83,7 +83,7 @@
 <div id="liveStream" style="display:none">   
     
     <?php
-    $files = glob("../images/*.*");
+    $files = glob("images/*.*");
     foreach($files as $num)
     {
         $image = '<img src="'.$num.'" style="max-height:100%; max-width:100%">';

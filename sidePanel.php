@@ -6,8 +6,8 @@
                     <hr style="margin-right: 1em;">
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <img src="../images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);"> <br>
-                        <?php echo date("F d Y", filemtime("../images/2019-01-10_143A20.jpg"));
+                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);"> <br>
+                        <?php echo date("F d Y", filemtime("images/2019-01-10_143A20.jpg"));
                         ?>
                         </center>
                     </div>
@@ -24,14 +24,14 @@
                     <hr style="margin-right: 1em;">
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <img src="../images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this);" > <br>
+                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this);" > <br>
                         24 Hours
                         </center>
                     </div>
                     <br> 
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <img src="../images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this); "> <br>
+                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this); "> <br>
                         48 Hours
                         </center>
                     </div>

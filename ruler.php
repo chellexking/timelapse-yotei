@@ -66,7 +66,7 @@
         <div class="columnAbove">
           <?php
     
-          $files = glob("../images/*.*");
+          $files = glob("images/*.*");
             foreach($files as $num)
             {
             echo $image = '<img src="'.$num.'" height="80px" width="3%" style=\'overflow:hidden;\'
