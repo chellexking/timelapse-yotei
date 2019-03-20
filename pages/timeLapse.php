@@ -47,7 +47,7 @@
 }
     
 #playButton,
-#pauseButton {
+#pauseButton{
     font-size: 15px;
     background-color: dimgray;
     position: absolute;
@@ -58,8 +58,21 @@
     border-radius: 5px;
 }   
 
+#closeButton{
+    position: absolute;
+    z-index: 4;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: aliceblue;
+}    
+    
+    #closeButton:hover{
+        cursor: pointer;
+    }
+    
     #playButton:hover,
-    #pauseButton:hover {
+    #pauseButton:hover{
         cursor: pointer;
         background-color: darkgrey;
         color: aliceblue;
@@ -78,6 +91,8 @@
     }
     ?>
 
+    <div id="closeButton"> <i class="fa fa-times" aria-hidden="true" onclick="showTimelapse();"></i> </div>    
+        
     <div id="playButton"> <i class="fa fa-play" aria-hidden="true"></i></div>
     
     <div id="pauseButton" style="display:none;"> <i class="fa fa-pause" aria-hidden="true"></i> </div>

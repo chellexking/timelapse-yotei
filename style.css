@@ -9,7 +9,7 @@ html {
     height:  1em;
     width: 70px;
     color: aliceblue;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     font-size: 120%;
     background: #4F4C4C;
