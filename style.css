@@ -2,31 +2,6 @@ html {
     overflow: hidden;
 }
 
-/* side buttons!!! */
-
-.sideButton {
-    overflow: hidden;
-    height:  1em;
-    width: 70px;
-    color: aliceblue;
-    z-index: 1;
-    position: absolute;
-    font-size: 120%;
-    background: #4F4C4C;
-    border-radius: 10%;
-    bottom: 100px;
-    right: .8em;
-    padding: .3em .5em .3em .5em;
-    font-family: inherit;
-}
-
-.sideButton:hover{
-    cursor: pointer;
-    background: #908F8F;
-    -webkit-transition: all .3s ease-in;
-}
-
-
 /*image display on page */
 .modal {
     background: url("images/2019-01-10_093A45.jpg");
@@ -45,7 +20,7 @@ html {
     overflow: hidden;
 }
 
-#img01 {
+#panelImage {
     object-position: center;
     height: 100%;
     width: 100%;
@@ -58,7 +33,7 @@ html {
 }
 
 
-#img01-fullscreenCursor {
+#panelImage-fullscreenCursor {
     object-position: center;
     height: 100%;
     width: 100%;
@@ -67,18 +42,6 @@ html {
     min-width: 1024px;
     min-height: 100%;
     cursor: -webkit-zoom-out;
-}
-
-.demo {
-  opacity: 0;
-}
-
-.demo:hover {
-  opacity: 0.7;
-}
-            
-.cursor {
-  cursor: pointer;
 }
 
 /* live cam at bottom right */

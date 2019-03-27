@@ -1,23 +1,15 @@
-
-// declare a single global-scoped object
+// Declare a single global-scoped object to be used in function 'display()' to assign it with value of selected image.
 var imageURL = {};
 
-//image modal display on panel functions
-function display(element) {
-    document.getElementById("img01").src = element.src;    
-    document.getElementById("myModal").style.display = "block";
-    
-    //attach the variable to the globally scoped object
-    imageURL.link = element.src;
-}    
-
-//function to save image
+// Image save function
 function saveImage() {
-    //call the globally scoped object
-    window.open(imageURL.link);
+    if (imageURL !== null){
+        // Call the globally scoped object
+        window.open(imageURL.link);
+    }
 }
 
-//fullscreen toggle functions 
+// Fullscreen toggle functions
 function fullscreen(){
     if(!document.fullscreenElement){
         document.documentElement.requestFullscreen();
@@ -26,17 +18,17 @@ function fullscreen(){
     }
 }
 
-//fullscreen cursor properties
+// Fullscreen cursor properties; switch between zoom in and zoom out cursor.
 document.addEventListener("fullscreenchange", function (event){
 if(document.fullscreenElement){
-    document.getElementById('img01').setAttribute('id','img01-fullscreenCursor');
+    document.getElementById('panelImage').setAttribute('id','panelImage-fullscreenCursor');
     
 } else {
-    document.getElementById('img01-fullscreenCursor').setAttribute('id','img01');
+    document.getElementById('panelImage-fullscreenCursor').setAttribute('id','panelImage');
 }
 });
 
-//loading screen function
+// Loading screen function, display main page after 2 seconds. 
 function loadingScreen(){
     var timeOut = setTimeout(showPage, 2000);
 }

@@ -1,4 +1,98 @@
-<!DOCTYPE html> 
+<!-- This file stores the scripts for functionality of timelapse video. -->
+<div id="liveStream" style="display:none">   
+    
+    <?php
+    /**
+      * Loops through and displays all the images in directory '/images'. 
+      * 
+      * Modified in scripts for images to display in form of timelapse video.
+      *
+      */
+    $files = glob("images/*.*");
+    foreach($files as $num)
+    {
+        $image = '<img src="'.$num.'" style="max-height:100%; max-width:100%">';
+      echo $image;
+    }
+    ?>
+
+    <div id="closeButton"> <i class="fa fa-times" aria-hidden="true" onclick="showTimelapse();"></i> </div>    
+        
+    <div id="playButton"> <i class="fa fa-play" aria-hidden="true"></i></div>
+    
+    <div id="pauseButton" style="display:none;"> <i class="fa fa-pause" aria-hidden="true"></i> </div>
+    
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+    
+</div>
+
+<script>
+    /**
+      * This line hides all the images in '#liveStream' with index greater than 0.
+      * Thus result to displaying only one(1) image at a time.
+      */
+    
+     $("#liveStream > img:gt(0)").hide();
+    
+    /**
+      * @function
+      *
+      * showtimeLapse() shows the timelapse page upon click from home page.
+      *
+      * playSlideshow() plays the timelapse video upon click of play button and changes the play button to pause button.
+      *
+      * Uses setInterval() and clearInterval() to play and pause timelapse video.
+      */
+    
+    function showTimelapse(){
+        var x = document.getElementById("liveStream");
+
+        if(x.style.display === "none"){
+            x.style.display = "block";
+
+            var width = 1;
+
+            playButton.onclick = 
+                function playSlideshow(){
+                document.getElementById("pauseButton").style.display = "block";
+                slideInterval = setInterval(function() { 
+                    $('#liveStream > img:first')
+                    .fadeOut(500)
+                    .next()
+                    .fadeIn(500)
+                    .end()
+                    .appendTo('#liveStream');
+                },  250);
+
+                var elem = document.getElementById("myBar");  
+                progressBar = setInterval(function(){
+                if (width >= 100) {
+                  clearInterval(progressBar);
+                  clearInterval(slideInterval);
+                } else {
+                  width++; 
+                  elem.style.width = width + '%'; 
+                }}, 250);
+            }
+
+            pauseButton.onclick = 
+                function pauseSlideshow(){
+                document.getElementById("pauseButton").style.display = "none";
+                clearInterval(slideInterval);
+                clearInterval(progressBar);
+            } 
+        }
+        else{
+            x.style.display="none";
+            clearInterval(slideInterval);
+            clearInterval(progressBar);
+        } 
+    }
+    
+</script>
+
 <style>
 /*timelapse video */
 #liveStream {
@@ -67,90 +161,18 @@
     color: aliceblue;
 }    
     
-    #closeButton:hover{
-        cursor: pointer;
-    }
+#closeButton:hover{
+    cursor: pointer;
+}
     
-    #playButton:hover,
-    #pauseButton:hover{
-        cursor: pointer;
-        background-color: darkgrey;
-        color: aliceblue;
-    }    
+#playButton:hover,
+#pauseButton:hover{
+    cursor: pointer;
+    background-color: darkgrey;
+    color: aliceblue;
+}    
     
 </style>
 
-<div id="liveStream" style="display:none">   
-    
-    <?php
-    $files = glob("images/*.*");
-    foreach($files as $num)
-    {
-        $image = '<img src="'.$num.'" style="max-height:100%; max-width:100%">';
-      echo $image;
-    }
-    ?>
 
-    <div id="closeButton"> <i class="fa fa-times" aria-hidden="true" onclick="showTimelapse();"></i> </div>    
-        
-    <div id="playButton"> <i class="fa fa-play" aria-hidden="true"></i></div>
-    
-    <div id="pauseButton" style="display:none;"> <i class="fa fa-pause" aria-hidden="true"></i> </div>
-    
-    <div id="myProgress">
-        <div id="myBar"></div>
-    </div>
-    
-</div>
 
-<script>
-//selects the image in the id #livestream that is after index 0, hide all the images that are greater than index 0. 
-    $("#liveStream > img:gt(0)").hide();
-    
-//timelapse function upon button click
-function showTimelapse(){
-    var x = document.getElementById("liveStream");
-    
-    if(x.style.display === "none"){
-        x.style.display = "block";
-    
-        var width = 1;
-        
-        playButton.onclick = 
-            function playSlideshow(){
-            document.getElementById("pauseButton").style.display = "block";
-            slideInterval = setInterval(function() { 
-                $('#liveStream > img:first')
-                .fadeOut(500)
-                .next()
-                .fadeIn(500)
-                .end()
-                .appendTo('#liveStream');
-            },  250);
-            
-            var elem = document.getElementById("myBar");  
-            progressBar = setInterval(function(){
-            if (width >= 100) {
-              clearInterval(progressBar);
-              clearInterval(slideInterval);
-            } else {
-              width++; 
-              elem.style.width = width + '%'; 
-            }}, 250);
-        }
-        
-        pauseButton.onclick = 
-            function pauseSlideshow(){
-            document.getElementById("pauseButton").style.display = "none";
-            clearInterval(slideInterval);
-            clearInterval(progressBar);
-        } 
-    }
-    else{
-        x.style.display="none";
-        clearInterval(slideInterval);
-        clearInterval(progressBar);
-    } 
-}
-    
-</script>

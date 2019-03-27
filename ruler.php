@@ -1,4 +1,72 @@
 
+<div class ="horizontal-line"></div>
+
+    <!-- Image column Display -->
+        <div class="columnAbove">
+          <?php
+          /** 
+            * This php script is used to display images on the top layer of the image column, which limits the amount of images to display.
+            *    
+            * This reduces the rendering time of the images to allow shorter loading time of webpage.
+            */
+          $files = glob("images/*.*");
+            foreach($files as $num)
+            {
+            echo $image = '<img src="'.$num.'" height="80px" width="3%" style=\'overflow:hidden;\'">';
+            }
+          ?>
+        </div>
+
+    <!-- Ruler Grid container -->    
+        <div class="ruler-container">
+            <?php
+            /**
+              * Draws all the small ruler grids into 'ruler-containter'.
+              */
+            for ($smallRuler = 0; $smallRuler <= 180 ; $smallRuler++){
+            
+            ?>    
+        
+        <div class="ruler-small"></div>
+            
+            <?php    
+            }
+
+            /**
+              * Creates two variables to get actual current time as start time and determine end time.
+              *
+              * Uses a for loop for every hour after this hour for 24 hours to add long grid and time. 
+              *
+              */
+
+              $start=strtotime('now');
+              $end=strtotime('+23 hour');
+
+              for ($i=$start; $i<=$end; $i = $i + 60*60)
+              {
+                  
+            ?>      
+                <div class="ruler">
+                <div class="time">
+            <?php
+                date_default_timezone_set ('Asia/Tokyo');    
+                echo date('H',$i)."\n";
+            ?>
+                </div>
+                </div>
+            <?php       
+              }
+            ?>
+        </div>
+
+    <!-- livecam container for bottom right -->
+        <div class="livecamContainer">
+        <div class="liveText"> LIVE </div>    
+            <div class="cameraIcon">
+            <i class="fa fa-camera-retro fa-2x" ></i></div>
+        </div>
+
+
 <style>
 /* styling for ruler!! */
 .ruler {
@@ -20,7 +88,6 @@
   width: 100%;
   left: 1.5em;
   right: 100px;
-
 }
 
 .ruler-small {
@@ -57,57 +124,14 @@
     left: 0px;
     right: 0px;
 }
+
+.columnAbove {
+    position: fixed;
+    bottom: 0;
+    display: relative;
+    height: 80px;
+    left: 0;
+    right: 80px;
+}
+
 </style>
-
-
-<div class ="horizontal-line"></div>
-
-<!-- ruler container for front display panel -->
-        <div class="columnAbove">
-          <?php
-    
-          $files = glob("images/*.*");
-            foreach($files as $num)
-            {
-            echo $image = '<img src="'.$num.'" height="80px" width="3%" style=\'overflow:hidden;\'
-              onclick="display(this);">';
-          }
-          ?>
-        </div>
-
-<!-- ruler container for the back -->
-    
-        <div class="ruler-container">
-
-            <?php
-                
-            for ($smallRuler = 0; $smallRuler <= 180 ; $smallRuler++){
-            
-            ?>    
-                <div class="ruler-small"></div>
-            
-            <?php    
-            }
-
-//make for loop for every hour after this hour for 24 hours
-
-              $start=strtotime('now');
-              $end=strtotime('+23 hour');
-
-              for ($i=$start; $i<=$end; $i = $i + 60*60)
-              {
-                  
-            ?>      
-                <div class="ruler">
-                <div class="time">
-            <?php
-                date_default_timezone_set ('Asia/Tokyo');    
-                echo date('H',$i)."\n";
-            ?>
-                </div>
-                </div>
-            <?php       
-              }
-            ?>
-
-        </div>
