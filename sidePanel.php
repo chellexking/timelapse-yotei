@@ -1,18 +1,18 @@
 <!-- This file represents the 3 buttons on the right which comprises of favourite images, timelapse video, and image save button. -->
-        
+
         <!-- Button 1 -->
         <div class = "sideButton1" style = "top: 10em;">
             <i class="far fa-heart"></i>
             <!-- This div will be displayed on hover -->
             <div class = "sidePanelFav">
                 <div class = "sidePanelContent">
-                    Favourite Images    
+                    Favourite Images
                     <hr style="margin-right: 1em;">
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);"> <br>
+                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);" onclick="display(this)"> <br>
                         <?php
-                            /** 
+                            /**
                              * Gets the date where file is created and display in month|date|year format.
                              */
                             echo date("F d Y", filemtime("images/2019-01-10_143A20.jpg"));
@@ -22,24 +22,24 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Button 2 -->
         <div class = "sideButton1" style ="top:11.8em;">
             <i class="fas fa-play-circle"></i>
-            <!-- This div will be displayed on hover -->     
+            <!-- This div will be displayed on hover -->
             <div class = "sidePanelVideo">
                 <div class = "sidePanelContent">
-                    Timelapse Videos    
+                    Timelapse Videos
                     <hr style="margin-right: 1em;">
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <!-- When image is clicked, timelapse video will be played triggered by "showTimelapse()" function. 
-                             When moused over, image will be highlighted -->    
+                        <!-- When image is clicked, timelapse video will be played triggered by "showTimelapse()" function.
+                             When moused over, image will be highlighted -->
                         <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this);" > <br>
                         24 Hours
                         </center>
                     </div>
-                    <br> 
+                    <br>
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
                         <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this); "> <br>
@@ -47,9 +47,9 @@
                         </center>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
-        
+
         <!-- Button 3 -->
         <div class="sideButton" onclick="saveImage();">
             <i class="fas fa-cloud-download-alt"> </i> Save </div>
@@ -60,25 +60,24 @@
 .sidePanelFav {
     display: none;
     height: 12em;
-    width: 16em;
+    width: 12em;
     background: #323232;
     border-radius: 20px 0 20px 20px;
-    margin-left: -14.5em;
-    overflow-y: scroll;
+    margin-left: -10.5em;
     margin-bottom: 100px;
 }
 
 .sidePanelVideo {
     display: none;
     height: 12em;
-    width: 16em;
+    width: 12em;
     background: #323232;
     border-radius: 20px 0 20px 20px;
-    margin-left: -14.5em;
+    margin-left: -10.5em;
     margin-bottom: 100px;
 }
 
-.sidePanelContent { 
+.sidePanelContent {
     font-size : .65em;
     padding-left: 15px;
     padding-top: 10px;
@@ -86,8 +85,8 @@
 }
 
 /* side buttons!!! */
-    
-/* for Button 3 */    
+
+/* for Button 3 */
 .sideButton {
     overflow: hidden;
     width: 70px;
@@ -107,9 +106,9 @@
     cursor: pointer;
     background: #908F8F;
     -webkit-transition: all .3s ease-in;
-}    
-    
-/* for Button 1 and 2 */    
+}
+
+/* for Button 1 and 2 */
 .sideButton1 {
     height:  1em;
     width: 50px;
@@ -124,12 +123,12 @@
     cursor: pointer;
 }
 
-.sideButton1:hover .sidePanelFav { 
+.sideButton1:hover .sidePanelFav {
     display: block;
     cursor: pointer;
 }
 
-.sideButton1:hover .sidePanelVideo { 
+.sideButton1:hover .sidePanelVideo {
     display: block;
     cursor: pointer;
 }
@@ -140,9 +139,9 @@
   * shows border upon image hover
   */
 function borderImg(x){
-    x.style.border = "thin solid #FFFFFF"; 
+    x.style.border = "thin solid #FFFFFF";
 }
 function normalImg(x){
     x.style.border="none";
-}    
+}
 </script>

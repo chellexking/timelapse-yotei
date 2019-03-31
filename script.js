@@ -22,24 +22,18 @@ function fullscreen(){
 document.addEventListener("fullscreenchange", function (event){
 if(document.fullscreenElement){
     document.getElementById('panelImage').setAttribute('id','panelImage-fullscreenCursor');
-    
+
 } else {
     document.getElementById('panelImage-fullscreenCursor').setAttribute('id','panelImage');
 }
 });
 
-// Loading screen function, display main page after 2 seconds. 
+// Loading screen function, display main page after 2 seconds.
 function loadingScreen(){
     var timeOut = setTimeout(showPage, 2000);
 }
 
 function showPage(){
-    document.getElementById("loader").style.display="none"; 
+    document.getElementById("loader").style.display="none";
     document.getElementById("pageDisplay").style.display="block";
 }
-
-
-    
-    
-
-
