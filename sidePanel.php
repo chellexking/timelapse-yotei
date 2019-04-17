@@ -1,21 +1,22 @@
 <!-- This file represents the 3 buttons on the right which comprises of favourite images, timelapse video, and image save button. -->
+<?php include "getLatestFile.php" ?>
 
         <!-- Button 1 -->
-        <div class = "sideButton1" style = "top: 10em;">
+        <div class = "sideButton1" style = "top: 9em;">
             <i class="far fa-heart"></i>
             <!-- This div will be displayed on hover -->
             <div class = "sidePanelFav">
                 <div class = "sidePanelContent">
                     Favourite Images
-                    <hr style="margin-right: 1em;">
+                    <hr style="margin-right: 4em;">
                     <div id="imageBorder" style="width:50%; font-size: 15px; ">
                         <center>
-                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);" onclick="display(this)"> <br>
+                        <img src="48hr/<?php echo $latestImg; ?>" style="height: 100px; width: 180px;" onmouseover="borderImg(this);" onmouseout="normalImg(this);" onclick="display(this)"> <br>
                         <?php
                             /**
                              * Gets the date where file is created and display in month|date|year format.
                              */
-                            echo date("F d Y", filemtime("images/2019-01-10_143A20.jpg"));
+                            echo date("F d Y", filemtime("48hr/2019-01-10_143A20.jpg"));
                         ?>
                         </center>
                     </div>
@@ -24,25 +25,25 @@
         </div>
 
         <!-- Button 2 -->
-        <div class = "sideButton1" style ="top:11.8em;">
+        <div class = "sideButton1" style ="top:10.8em;">
             <i class="fas fa-play-circle"></i>
             <!-- This div will be displayed on hover -->
             <div class = "sidePanelVideo">
                 <div class = "sidePanelContent">
                     Timelapse Videos
-                    <hr style="margin-right: 1em;">
-                    <div id="imageBorder" style="width:50%; font-size: 15px; ">
+                    <hr style="margin-right: 4em;">
+                    <div id="24h" style="width:50%; font-size: 15px;" onclick="showTimelapse24h();" onmouseover="borderImg(this);" onmouseout="normalImg(this);" >
                         <center>
                         <!-- When image is clicked, timelapse video will be played triggered by "showTimelapse()" function.
                              When moused over, image will be highlighted -->
-                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this);" > <br>
+                        <img src="48hr/<?php echo $latestImg; ?>" style="height: 100px; width: 100%;" > <br>
                         24 Hours
                         </center>
                     </div>
                     <br>
-                    <div id="imageBorder" style="width:50%; font-size: 15px; ">
+                    <div id="48h" style="width:50%; font-size: 15px;"  onclick="showTimelapse48h();" onmouseover="borderImg(this);" onmouseout="normalImg(this);">
                         <center>
-                        <img src="images/2019-01-10_143A20.jpg" style="height: 100px; width: 180px;" onclick="showTimelapse();" onmouseover="borderImg(this);" onmouseout="normalImg(this); "> <br>
+                        <img src="48hr/<?php echo $latestImg; ?>" style="height: 100px; width: 100%;"> <br>
                         48 Hours
                         </center>
                     </div>
@@ -82,6 +83,7 @@
     padding-left: 15px;
     padding-top: 10px;
     font-family: arial;
+    margin-top: -42px;
 }
 
 /* side buttons!!! */
@@ -96,7 +98,7 @@
     font-size: 120%;
     background: #4F4C4C;
     border-radius: 10%;
-    bottom: 100px;
+    bottom: 130px;
     right: .8em;
     padding: .3em .5em .3em .5em;
     font-family: inherit;
@@ -144,4 +146,5 @@ function borderImg(x){
 function normalImg(x){
     x.style.border="none";
 }
+
 </script>

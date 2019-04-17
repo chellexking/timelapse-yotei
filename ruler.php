@@ -4,12 +4,12 @@
     <!-- Image column Display -->
         <div class="columnAbove">
           <?php
-          /** 
+          /**
             * This php script is used to display images on the top layer of the image column, which limits the amount of images to display.
-            *    
+            *
             * This reduces the rendering time of the images to allow shorter loading time of webpage.
             */
-          $files = glob("images/*.*");
+          $files = glob("48hr/*.*");
             foreach($files as $num)
             {
             echo $image = '<img src="'.$num.'" height="80px" width="3%" style=\'overflow:hidden;\'">';
@@ -17,25 +17,25 @@
           ?>
         </div>
 
-    <!-- Ruler Grid container -->    
+    <!-- Ruler Grid container -->
         <div class="ruler-container">
             <?php
             /**
               * Draws all the small ruler grids into 'ruler-containter'.
               */
             for ($smallRuler = 0; $smallRuler <= 180 ; $smallRuler++){
-            
-            ?>    
-        
+
+            ?>
+
         <div class="ruler-small"></div>
-            
-            <?php    
+
+            <?php
             }
 
             /**
               * Creates two variables to get actual current time as start time and determine end time.
               *
-              * Uses a for loop for every hour after this hour for 24 hours to add long grid and time. 
+              * Uses a for loop for every hour after this hour for 24 hours to add long grid and time.
               *
               */
 
@@ -44,24 +44,24 @@
 
               for ($i=$start; $i<=$end; $i = $i + 60*60)
               {
-                  
-            ?>      
+
+            ?>
                 <div class="ruler">
                 <div class="time">
             <?php
-                date_default_timezone_set ('Asia/Tokyo');    
+                date_default_timezone_set ('Asia/Tokyo');
                 echo date('H',$i)."\n";
             ?>
                 </div>
                 </div>
-            <?php       
+            <?php
               }
             ?>
         </div>
 
     <!-- livecam container for bottom right -->
-        <div class="livecamContainer">
-        <div class="liveText"> LIVE </div>    
+        <div class="livecamContainer" onclick="display(this);">
+        <div class="liveText"> LIVE </div>
             <div class="cameraIcon">
             <i class="fa fa-camera-retro fa-2x" ></i></div>
         </div>

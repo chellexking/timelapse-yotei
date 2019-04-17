@@ -1,10 +1,20 @@
+<?php
+    header("Content-type: text/css; charset: UTF-8");
+
+    $dir = "48hr";
+    $files = scandir($dir, SCANDIR_SORT_DESCENDING);
+    $latestImg = $files[0];
+
+?>
+
+
 html {
     overflow: hidden;
 }
 
 /*image display on page */
 .modal {
-    background: url("images/2019-01-10_093A45.jpg");
+    background: url("48hr/<?php echo $latestImg; ?>");
     background-repeat: no-repeat;
     max-height: 100%;
     max-width: 100%;
@@ -47,7 +57,7 @@ html {
 /* live cam at bottom right */
 .livecamContainer{
     position: fixed;
-    background: url("images/2019-01-10_093A45.jpg");
+    background: url("48hr/<?php echo $latestImg; ?>");
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;

@@ -6,7 +6,7 @@
              * Loops through all images in directory '/images' and display all with transparency 0.
              */
 
-          $files = glob("images/*.*");
+          $files = glob("48hr/*.*");
           foreach($files as $num)
             {
             echo $image = '<img src="'.$num.'" height="100px" width="3%" style=\'overflow:hidden;\' onclick="display(this);" class="demo cursor">';
